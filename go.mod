@@ -6,8 +6,9 @@ require (
 	github.com/Knetic/govaluate v3.0.1-0.20171022003610-9aa49832a739+incompatible
 	github.com/cloudflare/cfssl v0.0.0-20180202232422-27b05afbb513
 	github.com/go-kit/kit v0.10.0
+	github.com/go-logfmt/logfmt v0.5.0 // indirect
 	github.com/golang/mock v1.4.4
-	github.com/golang/protobuf v1.5.2
+	github.com/golang/protobuf v1.3.3
 	github.com/google/certificate-transparency-go v1.0.21 // indirect
 	github.com/hyperledger/fabric-lib-go v1.0.0
 	github.com/miekg/pkcs11 v1.0.3
@@ -22,4 +23,11 @@ require (
 	golang.org/x/sys v0.0.0-20210809222454-d867a43fc93e // indirect
 	google.golang.org/grpc v1.31.0
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
+)
+
+replace (
+	github.com/go-kit/kit => github.com/go-kit/kit v0.8.0
+	github.com/golang/protobuf => github.com/golang/protobuf v1.3.1
+	github.com/prometheus/client_golang => github.com/prometheus/client_golang v0.9.2
+	google.golang.org/genproto => google.golang.org/genproto v0.0.0-20200513103714-09dca8ec2884
 )
