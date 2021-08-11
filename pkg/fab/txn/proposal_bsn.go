@@ -13,9 +13,9 @@ import (
 	"github.com/pkg/errors"
 	"sync"
 
+	pb "github.com/hyperledger/fabric-protos-go/peer"
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/errors/multi"
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/fab"
-	pb "github.com/hyperledger/fabric-sdk-go/third_party/github.com/hyperledger/fabric/protos/peer"
 )
 
 // SendProposal sends a TransactionProposal to ProposalProcessor.

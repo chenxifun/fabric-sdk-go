@@ -10,6 +10,7 @@ require (
 	github.com/golang/protobuf v1.5.2
 	github.com/google/certificate-transparency-go v1.0.21 // indirect
 	github.com/hyperledger/fabric-lib-go v1.0.0
+	github.com/hyperledger/fabric-protos-go v0.0.0-20200124220212-e9cfc186ba7b
 	github.com/miekg/pkcs11 v1.0.3
 	github.com/mitchellh/mapstructure v1.1.2
 	github.com/pkg/errors v0.9.1
