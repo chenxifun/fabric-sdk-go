@@ -1279,13 +1279,13 @@ func (c *EndpointConfig) loadOrdererConfigs() error {
 }
 
 func (c *EndpointConfig) loadChannelPeers() error {
-	GatewayLog.Logs("loadChannelPeers")
+	//GatewayLog.Logs("loadChannelPeers")
 	channelPeersByChannel := make(map[string][]fab.ChannelPeer)
 
 	for channelID, channelConfig := range c.networkConfig.Channels {
 		peers := []fab.ChannelPeer{}
 		for peerName, chPeerConfig := range channelConfig.Peers {
-			GatewayLog.Logs("loadChannelPeers ", peerName)
+			//GatewayLog.Logs("loadChannelPeers ", peerName)
 			p, ok := c.tryMatchingPeerConfig(strings.ToLower(peerName), false)
 			if !ok {
 				continue
