@@ -7,8 +7,6 @@ SPDX-License-Identifier: Apache-2.0
 package msp
 
 import (
-	//"RedNodeGateway/pkg/cache/redis"
-	//"RedNodeGateway/pkg/nma/cacheCert"
 	"fmt"
 	"strings"
 
@@ -18,7 +16,6 @@ import (
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/msp"
 	"github.com/hyperledger/fabric-sdk-go/pkg/msp/api"
 	"github.com/pkg/errors"
-	//"RedNodeGateway/pkg/nodelog"
 )
 
 var logger = logging.NewLogger("fabsdk/msp")
@@ -115,10 +112,6 @@ func (c *CAClientImpl) Enroll(request *api.EnrollmentRequest) error {
 	//存数SKI
 	//c.cryptoSuite.
 	cert, err := c.adapter.Enroll(request)
-	if err != nil {
-		return errors.Wrap(err, "enroll failed")
-	}
-
 	//var cert []byte
 	//var err error
 	////nodelog.Logs("[Enroll] 获取缓存的Cert:",request.Name)
@@ -126,32 +119,32 @@ func (c *CAClientImpl) Enroll(request *api.EnrollmentRequest) error {
 	//
 	//if !has {
 	//	lockKey:="Lock_"+request.Name
-	//	nodelog.Logs("[Enroll] 不存在,锁定该key:",lockKey)
+	//	//nodelog.Logs("[Enroll] 不存在,锁定该key:",lockKey)
 	//	redis.LockEx(lockKey,30)
-	//	nodelog.Logs("[Enroll]再次获取缓存的Cert:",request.Name)
+	//	//nodelog.Logs("[Enroll]再次获取缓存的Cert:",request.Name)
 	//	cert,has = cacheCert.GetCert(request.Name)
 	//	if !has {
-	//		nodelog.Logs("[Enroll]不存在缓存的Cert:")
+	//		//nodelog.Logs("[Enroll]不存在缓存的Cert:")
 	//		cert, err = c.adapter.Enroll(request)
 	//		if err != nil {
 	//			redis.UnLock(lockKey)
 	//			return errors.Wrap(err, "enroll failed")
 	//		}
-	//		nodelog.Logs("[Enroll] CAClientImpl.Enroll cert：", string(cert))
+	//		//nodelog.Logs("[Enroll] CAClientImpl.Enroll cert：", string(cert))
 	//
 	//		pubKey, err1 := cryptoutil.GetPublicKeyFromCert(cert, c.cryptoSuite)
 	//		if err1 == nil {
 	//			ski := pubKey.SKI()
-	//			nodelog.Logs("[Enroll] CAClientImpl.Enroll SKI:",hex.EncodeToString(ski))
+	//			//nodelog.Logs("[Enroll] CAClientImpl.Enroll SKI:",hex.EncodeToString(ski))
 	//			cacheCert.SetCert(request.Name, string(cert), hex.EncodeToString(ski), c.orgMSPID)
 	//		}else {
-	//			nodelog.Logs("[Enroll] 获取 SKI 异常：",err1)
+	//			//nodelog.Logs("[Enroll] 获取 SKI 异常：",err1)
 	//		}
 	//	}
-	//	nodelog.Logs("[Enroll] 解除锁定的Key",lockKey)
+	//	//nodelog.Logs("[Enroll] 解除锁定的Key",lockKey)
 	//	redis.UnLock(lockKey)
 	//}else {
-	//	nodelog.Logs("[Enroll] 存在缓存")
+	//	//nodelog.Logs("[Enroll] 存在缓存")
 	//}
 
 	userData := &msp.UserData{

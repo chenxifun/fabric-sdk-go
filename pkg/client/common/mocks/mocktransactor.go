@@ -7,7 +7,6 @@ SPDX-License-Identifier: Apache-2.0
 package mocks
 
 import (
-	pb "github.com/hyperledger/fabric-protos-go/peer"
 	"time"
 
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/context"
@@ -39,13 +38,6 @@ func (t *MockTransactor) SendTransactionProposal(proposal *fab.TransactionPropos
 	rqtx, cancel := contextImpl.NewRequest(t.Ctx, contextImpl.WithTimeout(10*time.Second))
 	defer cancel()
 	return txn.SendProposal(rqtx, proposal, targets)
-}
-
-func (t *MockTransactor) SendBsnTransactionProposal(proposal *pb.SignedProposal, targets []fab.ProposalProcessor) ([]*fab.TransactionProposalResponse, error) {
-
-	rqtx, cancel := contextImpl.NewRequest(t.Ctx, contextImpl.WithTimeout(10*time.Second))
-	defer cancel()
-	return txn.SendBsnProposal(rqtx, proposal, targets)
 }
 
 // CreateTransaction create a transaction with proposal response.

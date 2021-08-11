@@ -13,7 +13,7 @@ import (
 import "fmt"
 import "math"
 import "github.com/hyperledger/fabric-sdk-go/internal/github.com/hyperledger/fabric/protos/gossip"
-import "github.com/hyperledger/fabric-protos-go/msp"
+import "github.com/hyperledger/fabric-sdk-go/third_party/github.com/hyperledger/fabric/protos/msp"
 
 import (
 	"golang.org/x/net/context"
@@ -1173,7 +1173,7 @@ func (m *Peers) XXX_DiscardUnknown() {
 var xxx_messageInfo_Peers proto.InternalMessageInfo
 
 func (m *Peers) GetPeers() []*Peer {
-	//GatewayLog.Logs("5 GetPeers ")
+	////GatewayLog.Logs("5 GetPeers ")
 	if m != nil {
 		return m.Peers
 	}

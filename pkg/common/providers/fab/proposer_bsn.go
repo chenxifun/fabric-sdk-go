@@ -9,7 +9,7 @@
 package fab
 
 import (
-	pb "github.com/hyperledger/fabric-protos-go/peer"
+	pb "github.com/hyperledger/fabric-sdk-go/third_party/github.com/hyperledger/fabric/protos/peer"
 )
 
 type RequestProposal struct {

@@ -11,10 +11,10 @@ package txn
 import (
 	reqContext "context"
 	"github.com/golang/protobuf/proto"
-	"github.com/hyperledger/fabric-protos-go/common"
-	protos_utils "github.com/hyperledger/fabric-protos-go/utils"
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/fab"
 	"github.com/hyperledger/fabric-sdk-go/pkg/context"
+	"github.com/hyperledger/fabric-sdk-go/third_party/github.com/hyperledger/fabric/protos/common"
+	protos_utils "github.com/hyperledger/fabric-sdk-go/third_party/github.com/hyperledger/fabric/protos/utils"
 	"github.com/pkg/errors"
 )
 
@@ -26,7 +26,7 @@ func BsnSend(reqCtx reqContext.Context, tx *fab.Transaction, orderers []fab.Orde
 	}
 
 	//for _,o := range orderers{
-	//	GatewayLog.Logs( "Send Orderer",o.URL())
+	//	//GatewayLog.Logs( "Send Orderer",o.URL())
 	//}
 
 	if tx == nil {

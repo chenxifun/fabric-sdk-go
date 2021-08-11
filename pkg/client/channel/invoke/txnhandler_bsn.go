@@ -163,7 +163,7 @@ func (c *BsnCommitTxHandler) Handle(requestContext *RequestContext, clientContex
 	//GatewayLog.Logs( "requestContext.Response.ChaincodeStatus :",string(requestContext.Response.ChaincodeStatus))
 	//select {
 	//case txStatus := <-statusNotifier:
-	//	GatewayLog.Logs("statusNotifier 结果接收 ",&txStatus)
+	//	//GatewayLog.Logs("statusNotifier 结果接收 ",&txStatus)
 	//	requestContext.Response.TxValidationCode = txStatus.TxValidationCode
 	//	requestContext.Response.BlockNumber=txStatus.BlockNumber
 	//	if txStatus.TxValidationCode != pb.TxValidationCode_VALID {

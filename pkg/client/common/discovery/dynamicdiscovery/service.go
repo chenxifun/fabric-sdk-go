@@ -124,7 +124,7 @@ func (s *service) GetPeers() ([]fab.Peer, error) {
 	}
 
 	//for _ , p:= range peers{
-	//	GatewayLog.Logs( "4 GetPeers ",p.URL())
+	//	//GatewayLog.Logs( "4 GetPeers ",p.URL())
 	//}
 
 	//GatewayLog.Logs("4 GetPeers End",&peers)

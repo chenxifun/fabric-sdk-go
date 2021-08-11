@@ -144,6 +144,7 @@ func addDefaultTimeout(tt fab.TimeoutType) RequestOption {
 func (cc *Client) InvokeHandler(handler invoke.Handler, request Request, options ...RequestOption) (Response, error) {
 	//Read execute tx options
 
+	//GatewayLog.Logs("InvokeHandler 开始")
 	txnOpts, err := cc.prepareOptsFromOptions(cc.context, options...)
 	if err != nil {
 		return Response{}, err
@@ -178,9 +179,11 @@ func (cc *Client) InvokeHandler(handler invoke.Handler, request Request, options
 
 	complete := make(chan bool, 1)
 	go func() {
+		//GatewayLog.Logs("InvokeHandler go func")
 		_, _ = invoker.Invoke( // nolint: gas
 			func() (interface{}, error) {
 				handler.Handle(requestContext, clientContext)
+				//GatewayLog.Logs("requestContext.Response.TxValidationCode",requestContext.Response.TxValidationCode)
 
 				return nil, requestContext.Error
 			})

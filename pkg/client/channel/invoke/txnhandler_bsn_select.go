@@ -9,7 +9,6 @@
 package invoke
 
 import (
-	//"RedLog/GatewayLog"
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/fab"
 	"github.com/hyperledger/fabric-sdk-go/pkg/fab/peer"
 	"github.com/pkg/errors"

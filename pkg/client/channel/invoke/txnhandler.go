@@ -12,12 +12,12 @@ import (
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/options"
 	"github.com/pkg/errors"
 
-	"github.com/hyperledger/fabric-protos-go/common"
-	pb "github.com/hyperledger/fabric-protos-go/peer"
 	selectopts "github.com/hyperledger/fabric-sdk-go/pkg/client/common/selection/options"
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/fab"
 	"github.com/hyperledger/fabric-sdk-go/pkg/fab/peer"
 	"github.com/hyperledger/fabric-sdk-go/pkg/fab/txn"
+	"github.com/hyperledger/fabric-sdk-go/third_party/github.com/hyperledger/fabric/protos/common"
+	pb "github.com/hyperledger/fabric-sdk-go/third_party/github.com/hyperledger/fabric/protos/peer"
 )
 
 // TxnHeaderOptsProvider provides transaction header options which allow
@@ -193,7 +193,7 @@ func (c *CommitTxHandler) Handle(requestContext *RequestContext, clientContext *
 	//GatewayLog.Logs( "requestContext.Response.ChaincodeStatus :",string(requestContext.Response.ChaincodeStatus))
 	//select {
 	//case txStatus := <-statusNotifier:
-	//	GatewayLog.Logs("statusNotifier 结果接收 ",&txStatus)
+	//	//GatewayLog.Logs("statusNotifier 结果接收 ",&txStatus)
 	//	requestContext.Response.TxValidationCode = txStatus.TxValidationCode
 	//	requestContext.Response.BlockNumber=txStatus.BlockNumber
 	//	if txStatus.TxValidationCode != pb.TxValidationCode_VALID {

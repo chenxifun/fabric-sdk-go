@@ -30,20 +30,6 @@ import (
 	"github.com/hyperledger/fabric-sdk-go/internal/github.com/hyperledger/fabric/bccsp"
 )
 
-func NewEcdsaPrivateKey(privateKey *ecdsa.PrivateKey) bccsp.Key {
-
-	return &ecdsaPrivateKey{
-		privKey: privateKey,
-	}
-}
-
-func NewEcdsaPublicKey(publicKey *ecdsa.PublicKey) bccsp.Key {
-
-	return &ecdsaPublicKey{
-		pubKey: publicKey,
-	}
-}
-
 type ecdsaPrivateKey struct {
 	privKey *ecdsa.PrivateKey
 }

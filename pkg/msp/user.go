@@ -7,29 +7,13 @@ SPDX-License-Identifier: Apache-2.0
 package msp
 
 import (
-	"crypto/ecdsa"
 	"github.com/golang/protobuf/proto"
-	"github.com/hyperledger/fabric-sdk-go/pkg/core/cryptosuite/bccsp/wrapper"
 
-	pb_msp "github.com/hyperledger/fabric-protos-go/msp"
-	"github.com/hyperledger/fabric-sdk-go/internal/github.com/hyperledger/fabric/bccsp/sw"
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/core"
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/msp"
+	pb_msp "github.com/hyperledger/fabric-sdk-go/third_party/github.com/hyperledger/fabric/protos/msp"
 	"github.com/pkg/errors"
 )
-
-func NewUserIdentifier(userName, mspId string, cert []byte, key *ecdsa.PrivateKey) *User {
-
-	kk := sw.NewEcdsaPrivateKey(key)
-
-	u := &User{
-		id:                    userName,
-		mspID:                 mspId,
-		enrollmentCertificate: cert,
-		privateKey:            wrapper.GetKey(kk),
-	}
-	return u
-}
 
 // User is a representation of a Fabric user
 type User struct {
